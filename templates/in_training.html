@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+        
+{% block body  %}
+
+
+    <div class="jumbotron p-3 p-md-4 text-white bg-dark">
+
+        <div class="col-md-6 px-0">
+            <h2>Training</h2>
+            <p class="lead my-3">Model is trainging please wait</p>
+        </div>
+    </div>
+
+    <div style="height: 300px;"></div>
+
+    <div class="settings-box" id="settings-box" data-aos="fade-up">
+        <h2 class="settings-box-title">When trianing is done, click to begin testing </h2>
+        <form class="form-signin", method="POST">
+          <button class="btn btn-lg btn-primary btn-block" id="sub-bt" type="Submit">TEST</button>
+        </form>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 2000,
+        once: true,
+      });
+    </script>
+
+
+{% endblock %}
