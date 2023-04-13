@@ -11,81 +11,125 @@
         </div>
     </div>
 
-    <div style="height: 300px;"></div>
+    <div style="height: 100px;"></div>
 
     <div class="settings-box" id="settings-box" data-aos="fade-up">
         <h2 class="settings-box-title">Choose Capture Method</h2>
-        <form class="form-signin", method="POST">
+
             <div class="settings-box-separation" id="settings-box" data-aos="fade-up">
-                <h3 class="settings-box-title">Automatic</h3>
+                <h3 class="settings-box-title">Default</h3>
                 <div class="right-side-input">
-
-                    <button class="btn btn-lg btn-primary btn-block" name = submit_button value="auto-bt" id="auto-bt" type="submit">Get Windows</button>
-
-                    {% if all_windows %}
-                        {% for item in all_windows %}
-                            <button class="btn btn-lg btn-primary btn-block" id=item name = submit_button value ="auto-bt" type="submit">{{item}}</button>
-                        {% endfor %}
-                    {% endif %}
-
+                        <form class="form-signin", method="POST">
+                            <button class="btn btn-lg btn-primary btn-block" name = submit_button value="dino-bt" id="dino-bt" type="submit">Dinosaur T-Rex Game
+                                <span class="tooltiptext">Game Configuration: size set to the biggest</span>
+                            </button>
+                            <button class="btn btn-lg btn-primary btn-block" name = submit_button value="dino-bt" id="dino-bt" type="submit">Brick breaker
+                                <span class="tooltiptext">Game Configuration: size set to the biggest</span>
+                            </button>
+                        </form>
                 </div>
+                
                 <h3 class="settings-box-title">Manually</h3>
 
                 <div class="right-side-input">
-                    <div class="settings-box-grid">
+                    <form class="form-signin", method="POST">
+                        <div class="settings-box-grid">
 
-                        <div class="box-input">
-                            <div class ="set-grid-div">
-                                <h3>Box</h3>    
+                            <div class="box-input">
+                                <div class ="set-grid-div">
+                                    <h3>Box</h3>    
+                                </div>
+                                <div class ="set-grid-div">
+                                    <label for="box-top-pos-input">Top Position</label>
+                                    <input type="number" id="box-top-pos-input" class="form-control" name="box-top-pos-input" placeholder="Box Top Position">
+                                </div>
+                                <div class ="set-grid-div">
+                                    <label for="box-left-input">Left Position</label>
+                                    <input type="number" id="box-Left-input" class="form-control" name="box-left-input" placeholder="Box Left Position">
+                                </div>
+                                <div class ="set-grid-div">
+                                    <label for="box-width-input">Width</label>
+                                    <input type="number" id="box-width-input" class="form-control" name="box-width-input" placeholder="box Width">
+                                </div>
+                                <div class ="set-grid-div">
+                                    <label for="box-hight-input">Hight</label>
+                                    <input type="number" id="box-hight-input" class="form-control" name="box-hight-input" placeholder="Box Hight">
+                                </div>
                             </div>
-                            <div class ="set-grid-div">
-                                <label for="box-top-pos-input">Top Position</label>
-                                <input type="number" id="box-top-pos-input" class="form-control" name="box-top-pos-input" placeholder="Box Top Position">
+
+                            <div class="done-input">
+
+                                <div class ="set-grid-div">
+                                    <h3>Done</h3>    
+                                </div>
+
+                                <div class ="set-grid-div">
+                                    <label for="done-top-pos-input">Top Position</label>
+                                    <input type="number" id="done-top-pos-input" class="form-control" name="done-top-pos-input" placeholder="Done Top Position" required=False>
+                                </div>
+                                <div class ="set-grid-div">
+                                    <label for="done-left-input">Left Position</label>
+                                    <input type="number" id="done-left-input" class="form-control" name="done-left-input" placeholder="Done Left Position" required=False>
+                                </div>
+                                <div class ="set-grid-div">
+                                    <label for="done-width-input">Width</label>
+                                    <input type="number" id="done-width-input" class="form-control" name="done-width-input" placeholder="Done Width" required=False>
+                                </div>
+                                <div class ="set-grid-div">
+                                    <label for="done-hight-input">Hight</label>
+                                    <input type="number" id="done-hight-input" class="form-control" name="done-hight-input" placeholder="Done Hight" required=False>
+                                </div>
                             </div>
-                            <div class ="set-grid-div">
-                                <label for="box-left-input">Left Position</label>
-                                <input type="number" id="box-Left-input" class="form-control" name="box-left-input" placeholder="Box Left Position">
-                            </div>
-                            <div class ="set-grid-div">
-                                <label for="box-width-input">Width</label>
-                                <input type="number" id="box-width-input" class="form-control" name="box-width-input" placeholder="box Width">
-                            </div>
-                            <div class ="set-grid-div">
-                                <label for="box-hight-input">Hight</label>
-                                <input type="number" id="box-hight-input" class="form-control" name="box-hight-input" placeholder="Box Hight">
-                            </div>
+                            
                         </div>
-
-                        <div class="done-input">
-
-                            <div class ="set-grid-div">
-                                <h3>Done</h3>    
+                            
+                        <div class="key-Options">
+                            <h3>Boardkey Options</h3>  
+                            <input type="text" id="keys-input" class="form-control" name="keys-input" placeholder="Insert keys with a comma separating... " required=False>
+                        </div>
+                        <div class="reset-seq">
+                            <h3>Reset Sequence</h3>  
+                            <input type="text" id="keys-input" class="form-control" name="reset-input" placeholder="Insert resret sequence with a comma separating... " required=False>
+                             
+                        </div>
+                        <div class="neutral-seq">
+                                <h3>Neutral Mouse position</h3>
                             </div>
-
-                            <div class ="set-grid-div">
-                                <label for="done-top-pos-input">Top Position</label>
-                                <input type="number" id="done-top-pos-input" class="form-control" name="done-top-pos-input" placeholder="Done Top Position" required=False>
-                            </div>
-                            <div class ="set-grid-div">
-                                <label for="done-left-input">Left Position</label>
-                                <input type="number" id="done-left-input" class="form-control" name="done-left-input" placeholder="Done Left Position" required=False>
-                            </div>
-                            <div class ="set-grid-div">
-                                <label for="done-width-input">Width</label>
-                                <input type="number" id="done-width-input" class="form-control" name="done-width-input" placeholder="Done Width" required=False>
-                            </div>
-                            <div class ="set-grid-div">
-                                <label for="done-hight-input">Hight</label>
-                                <input type="number" id="done-hight-input" class="form-control" name="done-hight-input" placeholder="Done Hight" required=False>
-                            </div>
+                            <div class="settings-box-grid">
+                                <div class="box-input">
+                                    <div class ="set-grid-div">
+                                        <label for="box-top-pos-input">X Coordinate</label>
+                                        <input type="number" id="box-top-pos-input" class="form-control" name="x_coordinate" placeholder="Box Top Position">
+                                    </div>
+                                </div>
+                                <div class="box-input">
+                                    <div class ="set-grid-div">
+                                        <label for="box-top-pos-input">Y Coordinate</label>
+                                        <input type="number" id="box-top-pos-input" class="form-control" name="y_coordinate" placeholder="Box Top Position">
+                                    </div>
+                                </div>
                         </div>
                         
+                        <button class="btn btn-lg btn-primary btn-block" name="submit_button" value="sub-bt" id="sub-bt" type="submit">Submit</button>
                     </div>
-                    <button class="btn btn-lg btn-primary btn-block" name="submit_button" value="sub-bt" id="sub-bt" type="submit">Submit</button>
-                </div>
+                </form>
+
+                <h3 class="settings-box-title">Upload Model</h3>
+                
+                    <div class="right-side-input">
+                        
+                        <form class="form-signin", method="POST" enctype="multipart/form-data">
+                            <div class="upload-box-grid">
+                                <input class="upload-input" type=file name=file>
+                                <button class="btn btn-lg btn-primary btn-block" name = submit_button value="upload-bt" id="upload-bt" type="submit">Continue</button>
+                            </div>
+                            </form>
+                    </div>
+                
+            </div>
             </div>
 
-        </form>
+        
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

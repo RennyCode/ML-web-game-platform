@@ -1,47 +1,99 @@
-{% extends 'layout.html' %}
-        
-{% block body  %}
-
+{% extends 'layout.html' %} {% block body %}
 
 <div class="jumbotron p-3 p-md-4 text-white bg-dark">
-
-    <div class="col-md-6 px-0">
-        <h2>Your Game Selected Observation</h2>
-        <p class="lead my-3">Make sure the sizes are just right.</p>
-    </div>
+  <div class="col-md-6 px-0">
+    <h2>Your Game Selected Observation</h2>
+    <p class="lead my-3">Make sure the sizes are just right.</p>
+  </div>
 </div>
 
-<div style="height: 300px;"></div>
+<div style="height: 100px"></div>
 
-<div class="samples-box" id="samples-box" >
-    <div class="samples-box-grid">
-        <div class="box-input">
-            <h3 class = "samples-box-title">Box</h3> 
-            <img src="{{url_for('static', filename='/images/box1.png')}}" alt="done_img" class="plt-sampels">
-            <img src="{{url_for('static', filename='/images/box2.png')}}" alt="done_img" class="plt-sampels">
-            <h5 class = "samples-box-title">
-                {% for item in box %}
-                    {{item}} {% if loop.index != 4 %},{% endif %}
-                {% endfor %}
-            </h5>
-        </div>    
-        <div class="box-input">
-            <h3 class = "samples-box-title">Done</h3> 
-            <img src="{{url_for('static', filename='/images/done1.png')}}" alt="done_img" class="plt-sampels">
-            <img src="{{url_for('static', filename='/images/done2.png')}}" alt="done_img" class="plt-sampels">
-            <h5 class = "samples-box-title">
-                {% for item in done %}
-                    {{item}} {% if loop.index != 4 %},{% endif %}
-                {% endfor %}
-            </h5>
-        </div>
+<div class="samples-box" id="samples-box">
+  <div class="samples-box-grid">
+    <div class="box-input">
+      <h3 class="samples-box-title">Box</h3>
+      <img
+        src="{{url_for('static', filename='/images/box1.png')}}"
+        alt="done_img"
+        class="plt-sampels"
+      />
+      <img
+        src="{{url_for('static', filename='/images/box2.png')}}"
+        alt="done_img"
+        class="plt-sampels"
+      />
+      <h5 class="samples-box-title">
+        {% for item in box %} {{item}} {% if loop.index != 4 %},{% endif %} {%
+        endfor %}
+      </h5>
     </div>
-    <form class="form-signin", method="POST">
-        <div class="buttons">
-            <button class="btn btn-lg btn-primary btn-block" name="submit_button" value="conti-bt" type="submit">Continue</button>
-            <button class="btn btn-lg btn-primary btn-block" name="submit_button" value="redo-bt" type="submit">Redo</button>
-        </div>
-    </form>
+    <div class="box-input">
+      <h3 class="samples-box-title">Done</h3>
+      <img
+        src="{{url_for('static', filename='/images/done1.png')}}"
+        alt="done_img"
+        class="plt-sampels"
+      />
+      <img
+        src="{{url_for('static', filename='/images/done2.png')}}"
+        alt="done_img"
+        class="plt-sampels"
+      />
+      <h5 class="samples-box-title">
+        {% for item in done %} {{item}} {% if loop.index != 4 %},{% endif %} {%
+        endfor %}
+      </h5>
+    </div>
+  </div>
+
+  <div class="keys-grid">
+    <div class="keys">
+      <h4>Reset Sequence:</h4>
+      <ul class="downlist">
+        {% for act in res_seq %}
+        <li>{{act}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="keys">
+      <h4>Game Actions:</h4>
+      <ul class="downlist">
+        {% for key in keys %}
+        <li>{{key}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="keys">
+      <h4>Neutal Position:</h4>
+      <ul class="downlist">
+        {% for pos in neut_pos %}
+        <li>{{pos}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <form class="form-signin" , method="POST">
+    <div class="buttons">
+      <button
+        class="btn btn-lg btn-primary btn-block"
+        name="submit_button"
+        value="conti-bt"
+        type="submit"
+      >
+        Continue
+      </button>
+      <button
+        class="btn btn-lg btn-primary btn-block"
+        name="submit_button"
+        value="redo-bt"
+        type="submit"
+      >
+        Redo
+      </button>
+    </div>
+  </form>
 </div>
 
 {% endblock %}

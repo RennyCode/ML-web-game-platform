@@ -1,102 +1,168 @@
 /* laoyut */
 
-body{
-    background-image: url(/static/images/bg.png);
-    font-family: 'Oswald', sans-serif;
-    background-repeat: repeat;
-    background-attachment: fixed;
-    background-size: contain;
+body {
+  background-image: url(/static/images/bg.png);
+  font-family: "Oswald", sans-serif;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-size: contain;
 }
 
-.begin-div{
-    width: 50%;
-    margin: auto;
+.begin-div {
+  width: 50%;
+  margin: auto;
 }
 
-
-#begin-bt{
-    width: 25%;
-    margin: auto;
+#begin-bt {
+  width: 25%;
+  margin: auto;
 }
 
-.jumbotron{
-    background-color: #000 !important;
-    border-radius: 0% ;
-    border: solid;
-    
+.jumbotron {
+  background-color: #000 !important;
+  border-radius: 0%;
+  border: solid;
 }
 
-.samples-box{
-    width: 75%;
-    margin: auto;
-    padding: 10px;
-    border: solid;
-    background-color: #000;
-    color: #fff;
+.samples-box {
+  width: 75%;
+  margin: auto;
+  padding: 10px;
+  border: solid;
+  background-color: #000;
+  color: #fff;
 }
 
-
-.samples-box-grid{
-    width: 75%;
-    margin: auto;
-    padding: 15px; 
-    display: grid;
-    grid-template-columns: auto auto;
+.samples-box-grid {
+  width: 75%;
+  margin: auto;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
-.plt-sampels{
-    width: 100%;
-    height: 250px;
-    margin: auto;
-    padding: 10px;
+.upload-box-grid {
+  width: 100%;
+  margin: auto;
+  padding: 15px;
+  align-items: center;
 }
 
-.settings-box{
-    min-width: 500px;
-    width: 50%;
-    margin: auto;
-    padding: 10px;
-    border: solid;
-    background-color: #000;
-    color: #fff;
-    opacity: .5;
-
+.upload-input {
+  margin: auto;
 }
 
-.settings-box-title, .samples-box-title{
-    margin: auto;
-    font-weight: bold;
-    text-align: center;
+.plt-sampels {
+  width: 100%;
+  height: 250px;
+  margin: auto;
+  padding: 10px;
 }
 
-.settings-box-separation{
-    min-width: 500px;
-    width: 100%;
-    margin: auto;
-    padding: 10px;
-    display: grid;
-    grid-template-columns: auto auto;
+.settings-box {
+  min-width: 500px;
+  width: 50%;
+  margin: auto;
+  padding: 10px;
+  border: solid;
+  background-color: #000;
+  color: #fff;
+  opacity: 0.5;
 }
 
-
-.settings-box-grid{
-    width: 80%;
-    margin: auto;
-    padding: 10px;
-    display: grid;
-    grid-template-columns: auto auto;
+.settings-box-title,
+.samples-box-title {
+  margin: auto;
+  font-weight: bold;
+  text-align: center;
 }
 
-.right-side-input{
-    padding-top:  30px;
+.settings-box-separation {
+  min-width: 500px;
+  width: 100%;
+  margin: auto;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
-.set-grid-div{
-    padding:  10px;
+.settings-box-grid {
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
-#sub-bt, .buttons, #auto-bt{
-    margin:  auto;
-    padding: 10px;
-    width: 25%;
+.right-side-input {
+  padding-top: 30px;
+}
+
+.set-grid-div {
+  padding: 10px;
+}
+
+#sub-bt,
+.buttons,
+#auto-bt {
+  margin: auto;
+  padding: 10px;
+  width: 25%;
+}
+
+#dino-bt,
+#upload-bt,
+#single-bt {
+  margin: auto;
+  margin-top: 20px;
+  padding: 10px;
+  width: 25%;
+}
+
+.key-Options,
+.reset-seq {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+.neutral-seq {
+  width: 80%;
+  margin: auto;
+}
+
+.keys {
+  text-align: center;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.downlist {
+  display: inline-block;
+  text-align: left;
+}
+
+.keys-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin-top: 10px;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: auto;
+  background-color: rgb(255, 255, 255);
+  color: #3f85ee;
+  font-size: medium;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 2;
+}
+
+#dino-bt:hover .tooltiptext {
+  visibility: visible;
 }
